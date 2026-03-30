@@ -1,7 +1,8 @@
 target/
 .idea/
 *.iml
-.devtools/
 data/
 *.log
-*.zip
+# Архивы и неполные JDK в .devtools не коммитим (лимит GitHub 100 МБ на файл)
+.devtools/*.zip
+.devtools/jdk*

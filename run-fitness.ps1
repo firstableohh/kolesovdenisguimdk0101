@@ -2,6 +2,11 @@
 # Дважды щелкните или в PowerShell:  .\run-fitness.ps1
 # Если политика запрещает скрипты:  Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 
+try {
+    [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+    $OutputEncoding = [System.Text.Encoding]::UTF8
+} catch {}
+
 $ErrorActionPreference = "Stop"
 $ProjectRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
 
@@ -36,7 +41,7 @@ if (Test-Path "$mvnBin\mvn.cmd") {
 } else {
     $env:PATH = "$env:JAVA_HOME\bin;$env:PATH"
     if (-not (Get-Command mvn -ErrorAction SilentlyContinue)) {
-        Write-Host "Maven не найден. Скачайте архив в папку .devtools (см. комментарий в конце скрипта) или: winget install Apache.Maven" -ForegroundColor Red
+        Write-Host "Maven не найден. В репозитории должен быть каталог .devtools\apache-maven-3.9.14 (выполните git pull) или установите Maven: winget install Apache.Maven" -ForegroundColor Red
         exit 1
     }
 }

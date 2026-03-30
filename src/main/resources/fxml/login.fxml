@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.fitnessclub.ui.LoginController" spacing="14" alignment="CENTER"
+      styleClass="login-root">
+    <Label text="Фитнес-клуб" styleClass="login-title"/>
+    <Label text="Вход в систему" styleClass="login-subtitle"/>
+    <VBox spacing="8" maxWidth="320" alignment="CENTER_LEFT">
+        <Label text="Логин" styleClass="login-field-label"/>
+        <TextField fx:id="usernameField" promptText="admin / trainer1 / client1"/>
+        <Label text="Пароль" styleClass="login-field-label"/>
+        <PasswordField fx:id="passwordField" promptText="пароль"/>
+    </VBox>
+    <HBox spacing="12" alignment="CENTER">
+        <Button fx:id="loginButton" text="Войти" defaultButton="true" onAction="#onLogin"
+                styleClass="btn-login" mnemonicParsing="false"/>
+        <Button text="Регистрация" onAction="#onRegister" styleClass="btn-register-secondary"
+                mnemonicParsing="false"/>
+    </HBox>
+    <Label fx:id="errorLabel" styleClass="login-error" wrapText="true" maxWidth="320"/>
+    <Label text="Демо: admin/admin · trainer1/trainer · client1/client"
+           styleClass="login-hint" wrapText="true" maxWidth="320"/>
+</VBox>

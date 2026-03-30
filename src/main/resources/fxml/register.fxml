@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.fitnessclub.ui.RegisterController"
+            fitToWidth="true" hbarPolicy="NEVER" styleClass="register-scroll">
+    <VBox spacing="10" styleClass="login-root register-form" alignment="TOP_CENTER">
+        <padding>
+            <Insets top="20" right="24" bottom="20" left="24"/>
+        </padding>
+        <Label text="Регистрация клиента" styleClass="login-title"/>
+        <Label text="Создайте учётную запись для входа в личный кабинет" styleClass="login-subtitle" wrapText="true" maxWidth="340"/>
+        <GridPane hgap="10" vgap="8" maxWidth="360">
+            <columnConstraints>
+                <ColumnConstraints minWidth="110" prefWidth="120"/>
+                <ColumnConstraints hgrow="ALWAYS" minWidth="180"/>
+            </columnConstraints>
+            <Label text="ФИО" styleClass="login-field-label" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="fullNameField" promptText="Иванов Иван" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            <Label text="Возраст" styleClass="login-field-label" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <Spinner fx:id="ageSpinner" editable="true" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+            <Label text="Пол" styleClass="login-field-label" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="genderCombo" prefWidth="200" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+            <Label text="Телефон" styleClass="login-field-label" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <TextField fx:id="phoneField" promptText="+7..." GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+            <Label text="Email" styleClass="login-field-label" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+            <TextField fx:id="emailField" promptText="mail@example.com" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+            <Label text="Логин" styleClass="login-field-label" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+            <TextField fx:id="regUsernameField" promptText="уникальное имя" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+            <Label text="Пароль" styleClass="login-field-label" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+            <PasswordField fx:id="regPasswordField" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+            <Label text="Пароль ещё раз" styleClass="login-field-label" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+            <PasswordField fx:id="regPasswordConfirmField" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+        </GridPane>
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Зарегистрироваться" onAction="#onSubmit" styleClass="btn-login" defaultButton="true" mnemonicParsing="false"/>
+            <Button text="Отмена" onAction="#onCancel" styleClass="btn-register-secondary" mnemonicParsing="false"/>
+        </HBox>
+        <Label fx:id="registerErrorLabel" styleClass="login-error" wrapText="true" maxWidth="360"/>
+    </VBox>
+</ScrollPane>

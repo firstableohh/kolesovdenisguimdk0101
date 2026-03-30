@@ -1,0 +1,99 @@
+/* Экран входа — согласован с основной темой */
+
+.login-root {
+    -fx-font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+    -fx-padding: 28;
+    -fx-background-color: linear-gradient(to bottom, #0f172a, #1e3a5f 55%, #172554);
+}
+
+.login-title {
+    -fx-font-size: 26px;
+    -fx-text-fill: #f8fafc;
+    -fx-font-weight: bold;
+}
+
+.login-subtitle {
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 14px;
+}
+
+.login-field-label {
+    -fx-text-fill: #cbd5e1;
+    -fx-font-size: 12px;
+    -fx-font-weight: 600;
+}
+
+.login-root .text-field,
+.login-root .password-field {
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #334155;
+    -fx-background-color: #1e293b;
+    -fx-text-fill: #f1f5f9;
+    -fx-prompt-text-fill: #64748b;
+    -fx-padding: 10 12;
+}
+.login-root .text-field:focused,
+.login-root .password-field:focused {
+    -fx-border-color: #3b82f6;
+    -fx-effect: dropshadow(gaussian, rgba(59,130,246,0.35), 6, 0, 0, 0);
+}
+
+.btn-login {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-padding: 10 28;
+    -fx-cursor: hand;
+}
+.btn-login:hover {
+    -fx-background-color: #1d4ed8;
+}
+
+.btn-register-secondary {
+    -fx-background-color: transparent;
+    -fx-text-fill: #93c5fd;
+    -fx-border-color: #3b82f6;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 10 20;
+    -fx-cursor: hand;
+    -fx-font-weight: 600;
+}
+.btn-register-secondary:hover {
+    -fx-background-color: rgba(59, 130, 246, 0.2);
+    -fx-text-fill: #e0f2fe;
+}
+
+.register-scroll {
+    -fx-background-color: transparent;
+}
+.register-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.register-form .combo-box-base,
+.register-form .spinner {
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #334155;
+    -fx-background-color: #1e293b;
+}
+.register-form .combo-box .list-cell {
+    -fx-text-fill: #f1f5f9;
+}
+.register-form .spinner .text-field {
+    -fx-background-color: #1e293b;
+    -fx-text-fill: #f1f5f9;
+}
+
+.login-error {
+    -fx-text-fill: #fca5a5;
+    -fx-font-size: 12px;
+}
+
+.login-hint {
+    -fx-text-fill: #64748b;
+    -fx-font-size: 11px;
+}
